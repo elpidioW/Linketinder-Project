@@ -4,8 +4,8 @@ class Empresa extends Pessoa{
 
     String cnpj
 
-    Empresa(String nome, String email, String estado, String pais, String cep, String descricao, ArrayList<String> competencias, String cnpj){
-        super(nome, email, estado, pais, cep, descricao, competencias)
+    Empresa(int id, String nome, String email, String estado, String pais, String cep, String descricao, ArrayList<String> competencias, String cnpj){
+        super(id, nome, email, estado, pais, cep, descricao, competencias)
         this.cnpj = cnpj
     }
 

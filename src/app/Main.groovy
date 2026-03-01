@@ -11,7 +11,6 @@ class Main {
         def scanner = new Scanner(System.in)
 
         int opcao = -1
-
         while (opcao != 5) {
 
             println "\n===== MENU ====="
@@ -37,7 +36,7 @@ class Main {
                     break;
 
                 case 3:
-                    /*print "Nome: "
+                    print "Nome: "
                     String nome = scanner.nextLine()
 
                     print "Email: "
@@ -55,6 +54,10 @@ class Main {
                     print "Descrição: "
                     String descricao = scanner.nextLine()
 
+                    print "Digite suas competencias separadas por virgula: "
+                    String compLinha = scanner.nextLine()
+                    ArrayList<String> competencias = compLinha.tokenize(",")
+
                     print "CPF: "
                     String cpf = scanner.nextLine()
 
@@ -62,43 +65,36 @@ class Main {
                     int idade = scanner.nextInt()
                     scanner.nextLine()
 
-                    def candidato = new Candidato(
-                            nome, email, estado, pais, cep,
-                            descricao, [], cpf, idade
-                    )
-
-                    cadastroService.listaCandidatos.add(candidato)
-
-                    println "Candidato criado com sucesso!"*/
-                    println(3)
+                    cadastroService.cadastrarCandidato(nome, email, estado, pais, cep, descricao, competencias, cpf, idade)
                     break;
 
                 case 4:
-                    /*print "Nome da Empresa: "
-                    String nomeEmpresa = scanner.nextLine()
+                    print "Nome: "
+                    String nome = scanner.nextLine()
 
                     print "Email: "
-                    String emailEmpresa = scanner.nextLine()
+                    String email = scanner.nextLine()
 
                     print "Estado: "
-                    String estadoEmpresa = scanner.nextLine()
+                    String estado = scanner.nextLine()
 
                     print "País: "
-                    String paisEmpresa = scanner.nextLine()
+                    String pais = scanner.nextLine()
 
                     print "CEP: "
-                    String cepEmpresa = scanner.nextLine()
+                    String cep = scanner.nextLine()
 
-                    def empresa = new Empresa(
-                            nomeEmpresa, emailEmpresa,
-                            estadoEmpresa, paisEmpresa, cepEmpresa
-                    )
+                    print "Descrição: "
+                    String descricao = scanner.nextLine()
 
-                    cadastroService.listaEmpresas.add(empresa)
+                    print "Digite as competencias esperadas pela empresa separadas por virgula: "
+                    String compLinha = scanner.nextLine()
+                    ArrayList<String> competencias = compLinha.tokenize(",")
 
-                    println "Empresa criada com sucesso!"
-                    */
-                    println(4);
+                    print "CNPJ: "
+                    String cnpj = scanner.nextLine()
+
+                    cadastroService.cadastrarEmpresa(nome, email, estado, pais, cep, descricao, competencias, cnpj)
                     break
 
                 case 5:
@@ -111,11 +107,3 @@ class Main {
         }
     }
 }
-
-
-//fazer menu com 5 opções, listar usuario/empresa; criar usuario/empresa; sair
-//a validação se o usuario escreveu corretamente vai ser feita aqui
-
-
-//opção de listar empresas e listar candidatos
-//implementar cadastros de candidatos e empresas

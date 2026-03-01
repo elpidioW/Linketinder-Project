@@ -4,8 +4,9 @@ Esta aplicação tem como objetivo facilitar a contratação de um candidato às
 
 Atualmente a aplicação permite o cadastro e listagem de candidatos e empresas
 
-Main é responsável pelo menu.
-Candidato e empresa são responsáveis pelos
+Main é responsável pelo menu.<br>
+CadastroService é responsável pelo cadastro e listagem dos candidatos e das empresas.<br>
+
 
 
 ### Feito por: Wallace Elpidio Pereira cardoso <br><br>

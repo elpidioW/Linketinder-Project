@@ -12,6 +12,10 @@ CadastroService é responsável pelo cadastro e listagem dos candidatos e das em
 ### Feito por: Wallace Elpidio Pereira cardoso <br><br>
 
 
+Para executar:
+Necessário Java JDK 8+ e Groovy instalado
+Dentro da pasta do projeto, execute: groovy src/Main.groovy
+
 Pras próximas atualizações:
 - Validação no cadastro dos candidatos e empresas. 
 - Função de curtidas entre candidatos e empresas.

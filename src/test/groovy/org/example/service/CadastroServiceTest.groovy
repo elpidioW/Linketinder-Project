@@ -52,5 +52,4 @@ class cadastroServiceTest{
             assertTrue(true)
         }
     }
-
 }

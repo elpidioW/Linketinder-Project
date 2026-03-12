@@ -54,4 +54,5 @@ class CadastroService {
     }
 
 
+    def void cadastrarCandidato(Object o) {}
 }

@@ -35,31 +35,22 @@ class cadastroServiceTest{
     @Test
     public void testCadastraEmpresaCerta(){
         cadastroService = new CadastroService();
-        cadastroService.cadastrarCandidato(cadastrarEmpresa("TechNova", "contato@technova.com", "SP", "Brasil", "01000-000", "Empresa de software corporativo", ["Java", "Groovy", "Spring"] as ArrayList<String>, "12.345.678/0001-90"))
-        assertFalse(cadastroService.listaCandidatos.isEmpty())
+        cadastroService.cadastrarEmpresa("TechNova", "contato@technova.com", "SP", "Brasil", "01000-000", "Empresa de software corporativo", ["Java", "Groovy", "Spring"] as ArrayList<String>, "12.345.678/0001-90")
+        assertFalse(cadastroService.listaEmpresas.isEmpty())
     }
 
     @Test
-    public void testNaoCadastraUsuarioErrado(){
+    public void testNaoCadastraEmpresaErrada(){
         cadastroService = new CadastroService();
         try{
-            cadastroService.cadastrarCandidato("João Silva", "joao@email.com", "SP", "Brasil", "01000-000", "Desenvolvedor Backend Java", new ArrayList<String>(["Java", "Spring", "SQL", "Git"]), "12345678901", 24);
-            cadastroService.cadastrarCandidato("joao@email.com", "SP", "Brasil", "01000-000", "Desenvolvedor Backend Java", new ArrayList<String>(["Java", "Spring", "SQL", "Git"]), "12345678901", 24);
-            cadastroService.cadastrarCandidato(12,"joao@email.com", "SP", "Brasil", "01000-000", "Desenvolvedor Backend Java", new ArrayList<String>(["Java", "Spring", "SQL", "Git"]), "12345678901", 24);
+            cadastroService.cadastrarEmpresa(cadastrarEmpresa("contato@technova.com", "SP", "Brasil", "01000-000", "Empresa de software corporativo", ["Java", "Groovy", "Spring"] as ArrayList<String>, "12.345.678/0001-90"))
+            cadastroService.cadastrarEmpresa(cadastrarEmpresa(1, "contato@technova.com", "SP", "Brasil", "01000-000", "Empresa de software corporativo", ["Java", "Groovy", "Spring"] as ArrayList<String>, "12.345.678/0001-90"))
+            cadastroService.cadastrarEmpresa(cadastrarEmpresa("TechNova", "contato@technova.com", "SP", "Brasil", "01000-000", "Empresa de software corporativo", ["Java", "Groovy", "Spring"] as ArrayList<String>, "12.345.678/0001-90"))
+
             fail()
         }catch(MissingMethodException e){
             assertTrue(true)
         }
     }
-
-    @Ignore
-    public void testCadastrarEmpresaCerta(){
-
-
-    }
-
-    //cadastrarEmpresa("TechNova", "contato@technova.com", "SP", "Brasil", "01000-000", "Empresa de software corporativo", ["Java", "Groovy", "Spring"] as ArrayList<String>, "12.345.678/0001-90")
-    //
-
 
 }

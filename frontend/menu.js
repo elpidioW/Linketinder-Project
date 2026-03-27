@@ -10,6 +10,7 @@ botaoCadastroCandidato.onclick = function(){
 }
 
 botaoCadastroEmpresa.onclick = function(){
+    window.open("empresa/cadastro/cadastro-empresa.html", "_blank");
     console.log("clicou");
 }
 

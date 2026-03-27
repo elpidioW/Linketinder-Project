@@ -1,9 +1,14 @@
+const localStorageCandidatos = localStorage.getItem('candidatos');
 let listaCandidatos = [];
+if (localStorageCandidatos) {
+    listaCandidatos = JSON.parse(localStorageCandidatos);
+}
 const formulario = document.getElementById('formularioCadastroUsuario');
 let auxID = 0;
 formulario.addEventListener('submit', function (evento) {
     evento.preventDefault();
-    const id = auxID++;
+    //const id: number = auxID++;
+    const id = Date.now();
     const nome = document.getElementById('nome').value;
     //const email:string = (document.getElementById('email') as HTMLInputElement).value;
     const cpf = document.getElementById('cpf').value;
@@ -30,7 +35,7 @@ formulario.addEventListener('submit', function (evento) {
         competencias: competencias
     };
     listaCandidatos.push(candidato);
-    console.log(listaCandidatos);
+    localStorage.setItem('candidatos', JSON.stringify(listaCandidatos));
 });
 export {};
 //# sourceMappingURL=cadastro-candidato.js.map

@@ -13,9 +13,11 @@ export interface Candidato{
 }
 
 
+const localStorageCandidatos = localStorage.getItem('candidatos');
 let listaCandidatos: Candidato[] = [];
-
-
+if(localStorageCandidatos){
+    listaCandidatos = JSON.parse(localStorageCandidatos);
+}
 
 const formulario = document.getElementById('formularioCadastroUsuario') as HTMLFormElement;
 
@@ -23,7 +25,8 @@ let auxID: number = 0;
 formulario.addEventListener('submit', function(evento){
     evento.preventDefault();
 
-    const id: number = auxID++;
+    //const id: number = auxID++;
+    const id: number = Date.now();
     const nome:string = (document.getElementById('nome') as HTMLInputElement).value;
     //const email:string = (document.getElementById('email') as HTMLInputElement).value;
     const cpf:string = (document.getElementById('cpf') as HTMLInputElement).value;
@@ -58,7 +61,6 @@ formulario.addEventListener('submit', function(evento){
     }
 
    listaCandidatos.push(candidato);
-
-   console.log(listaCandidatos); 
+   localStorage.setItem('candidatos', JSON.stringify(listaCandidatos));
 
 });

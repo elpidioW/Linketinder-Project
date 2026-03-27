@@ -1,2 +1,36 @@
+let listaCandidatos = [];
+const formulario = document.getElementById('formularioCadastroUsuario');
+let auxID = 0;
+formulario.addEventListener('submit', function (evento) {
+    evento.preventDefault();
+    const id = auxID++;
+    const nome = document.getElementById('nome').value;
+    //const email:string = (document.getElementById('email') as HTMLInputElement).value;
+    const cpf = document.getElementById('cpf').value;
+    const idade = parseInt(document.getElementById('idade').value);
+    const estado = document.getElementById('estado').value;
+    const cep = document.getElementById('cep').value;
+    const descricao = document.getElementById('descricao').value;
+    //Vai pegar todos os checbox com nome competecia e ver se estao marcados
+    const checkMarcados = document.querySelectorAll('input[name="competencia"]:checked');
+    const competencias = [];
+    //Vai pegar o valor de cada checkbox marcado e adicionar no array competencias
+    checkMarcados.forEach((checkbox) => {
+        competencias.push(checkbox.value);
+    });
+    const candidato = {
+        id: id,
+        nome: nome,
+        //email: email,
+        cpf: cpf,
+        idade: idade,
+        estado: estado,
+        cep: cep,
+        descricao: descricao,
+        competencias: competencias
+    };
+    listaCandidatos.push(candidato);
+    console.log(listaCandidatos);
+});
 export {};
 //# sourceMappingURL=cadastro-candidato.js.map

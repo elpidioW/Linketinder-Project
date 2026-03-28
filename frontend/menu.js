@@ -14,7 +14,7 @@ botaoCadastroEmpresa.onclick = function(){
 }
 
 botaoPerfilCandidato.onclick = function(){
-    console.log("clicou");
+    window.open("candidato/perfil/perfil-candidato.html", "_blank");
 }
 
 botaoPerfilEmpresa.onclick = function(){

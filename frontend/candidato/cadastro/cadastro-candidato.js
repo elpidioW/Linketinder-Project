@@ -4,13 +4,11 @@ if (localStorageCandidatos) {
     listaCandidatos = JSON.parse(localStorageCandidatos);
 }
 const formulario = document.getElementById('formularioCadastroUsuario');
-let auxID = 0;
 formulario.addEventListener('submit', function (evento) {
     evento.preventDefault();
-    //const id: number = auxID++;
     const id = Date.now();
     const nome = document.getElementById('nome').value;
-    //const email:string = (document.getElementById('email') as HTMLInputElement).value;
+    const email = document.getElementById('email').value;
     const cpf = document.getElementById('cpf').value;
     const idade = parseInt(document.getElementById('idade').value);
     const estado = document.getElementById('estado').value;
@@ -26,7 +24,7 @@ formulario.addEventListener('submit', function (evento) {
     const candidato = {
         id: id,
         nome: nome,
-        //email: email,
+        email: email,
         cpf: cpf,
         idade: idade,
         estado: estado,

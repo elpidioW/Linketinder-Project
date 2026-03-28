@@ -3,7 +3,7 @@
 export interface Empresa{
     id: number
     nome: string
-    //email: string
+    email: string
     cnpj: string
     pais: string
     estado: string
@@ -22,14 +22,13 @@ if(localStorageEmpresas){
 
 const formulario = document.getElementById('formularioCadastroEmpresa') as HTMLFormElement;
 
-let auxID: number = 0;
+
 formulario.addEventListener('submit', function(evento){
     evento.preventDefault();
 
-    //const id: number = auxID++;
     const id: number = Date.now();
     const nome:string = (document.getElementById('nome') as HTMLInputElement).value;
-    //const email:string = (document.getElementById('email') as HTMLInputElement).value;
+    const email:string = (document.getElementById('email') as HTMLInputElement).value;
     const cnpj:string = (document.getElementById('cnpj') as HTMLInputElement).value;
     const pais:string = (document.getElementById('pais') as HTMLInputElement).value;
     const estado:string = (document.getElementById('estado') as HTMLInputElement).value;
@@ -51,10 +50,10 @@ formulario.addEventListener('submit', function(evento){
     });
 
     const empresa: Empresa = {
-        //id: id,
+ 
         id: Date.now(),
         nome: nome,
-        //email: email,
+        email: email,
         cnpj: cnpj,
         pais: pais,
         estado: estado,

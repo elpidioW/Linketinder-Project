@@ -4,13 +4,11 @@ if (localStorageEmpresas) {
     listaEmpresas = JSON.parse(localStorageEmpresas);
 }
 const formulario = document.getElementById('formularioCadastroEmpresa');
-let auxID = 0;
 formulario.addEventListener('submit', function (evento) {
     evento.preventDefault();
-    //const id: number = auxID++;
     const id = Date.now();
     const nome = document.getElementById('nome').value;
-    //const email:string = (document.getElementById('email') as HTMLInputElement).value;
+    const email = document.getElementById('email').value;
     const cnpj = document.getElementById('cnpj').value;
     const pais = document.getElementById('pais').value;
     const estado = document.getElementById('estado').value;
@@ -24,10 +22,9 @@ formulario.addEventListener('submit', function (evento) {
         competencias.push(checkbox.value);
     });
     const empresa = {
-        //id: id,
         id: Date.now(),
         nome: nome,
-        //email: email,
+        email: email,
         cnpj: cnpj,
         pais: pais,
         estado: estado,

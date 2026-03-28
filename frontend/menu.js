@@ -11,7 +11,6 @@ botaoCadastroCandidato.onclick = function(){
 
 botaoCadastroEmpresa.onclick = function(){
     window.open("empresa/cadastro/cadastro-empresa.html", "_blank");
-    console.log("clicou");
 }
 
 botaoPerfilCandidato.onclick = function(){
@@ -19,5 +18,5 @@ botaoPerfilCandidato.onclick = function(){
 }
 
 botaoPerfilEmpresa.onclick = function(){
-    console.log("clicou");
+    window.open("empresa/perfil/perfil-empresa.html", "_blank");
 }

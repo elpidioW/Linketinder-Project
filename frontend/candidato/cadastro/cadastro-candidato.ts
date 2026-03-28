@@ -1,9 +1,8 @@
 
-
 export interface Candidato{
     id: number
     nome: string
-    //email: string
+    email: string
     cpf: string
     idade: number
     estado: string
@@ -21,14 +20,13 @@ if(localStorageCandidatos){
 
 const formulario = document.getElementById('formularioCadastroUsuario') as HTMLFormElement;
 
-let auxID: number = 0;
 formulario.addEventListener('submit', function(evento){
     evento.preventDefault();
 
-    //const id: number = auxID++;
+
     const id: number = Date.now();
     const nome:string = (document.getElementById('nome') as HTMLInputElement).value;
-    //const email:string = (document.getElementById('email') as HTMLInputElement).value;
+    const email:string = (document.getElementById('email') as HTMLInputElement).value;
     const cpf:string = (document.getElementById('cpf') as HTMLInputElement).value;
     const idade:number = parseInt((document.getElementById('idade') as HTMLInputElement).value);
     const estado:string = (document.getElementById('estado') as HTMLInputElement).value;
@@ -51,7 +49,7 @@ formulario.addEventListener('submit', function(evento){
     const candidato: Candidato = {
         id: id,
         nome: nome,
-        //email: email,
+        email: email,
         cpf: cpf,
         idade: idade,
         estado: estado,

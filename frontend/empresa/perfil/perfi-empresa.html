@@ -4,25 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil da Empresa</title>
+
 </head>
 <body>
 
-    <table border="5">
-        <thead>
-            <tr>
-                <th>Estado</th>
-                <th>Descrição</th>
-                <th>Competências</th>
-            </tr>
-        </thead>
+    <div>
+        <table border="5">
+            <thead>
+                <tr>
+                    <th>Estado</th>
+                    <th>Descrição</th>
+                    <th>Competências</th>
+                </tr>
+            </thead>
+    
+            <tbody id="tabelaCandidatos">
+            </tbody>
+        </table>
+    </div>
 
-        <tbody id="tabelaCandidatos">
-        </tbody>
-    </table>
+    <div>
+        <canvas id="graficoCompetencias"></canvas>
+    </div>
 
 
-
-
+    
     <script type="module" src="perfil-empresa.js"></script>
+    <script src="path/to/chartjs/dist/chart.umd.min.js"></script>
+
+
 </body>
 </html>

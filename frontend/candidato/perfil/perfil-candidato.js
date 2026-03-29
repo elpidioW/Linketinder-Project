@@ -6,15 +6,19 @@ if (localStorageEmpresas) {
 const tabela = document.getElementById('tabelaEmpresas');
 tabela.innerHTML = '';
 listaEmpresas.forEach((empresa) => {
-    const linha = `
+    empresa.vagas.forEach((vaga) => {
+        const linha = `
         <tr>
             <td>${empresa.pais}</td>
             <td>${empresa.estado}</td>
             <td>${empresa.descricao}</td>
-            <td>${empresa.competencias.join(' | ')}</td>
+            <td>${vaga.titulo}</td>
+            <td>${vaga.descricao}</td>
+            <td>${vaga.competencias.join(' | ')}</td>
         </tr>
     `;
-    tabela.innerHTML += linha;
+        tabela.innerHTML += linha;
+    });
 });
 export {};
 //# sourceMappingURL=perfil-candidato.js.map

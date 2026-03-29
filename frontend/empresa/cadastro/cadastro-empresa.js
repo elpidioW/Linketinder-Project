@@ -58,5 +58,9 @@ formulario.addEventListener('submit', function (evento) {
     listaEmpresas.push(empresa);
     localStorage.setItem('empresas', JSON.stringify(listaEmpresas));
 });
+const botaoVoltar = document.getElementById('botao_voltar');
+botaoVoltar.onclick = function () {
+    window.close();
+};
 export {};
 //# sourceMappingURL=cadastro-empresa.js.map

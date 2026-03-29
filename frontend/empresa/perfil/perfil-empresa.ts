@@ -37,15 +37,21 @@ const nomes = Object.keys(qtdCompetencias);
 const quantidades = Object.values(qtdCompetencias);
 
 
-const ctx = document.getElementById('graficoCompetencias') as HTMLCanvasElement;
+// const ctx = document.getElementById('graficoCompetencias') as HTMLCanvasElement;
 
-new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: nomes,
-        datasets: [{
-            label: 'Quantidade de Candidatos por Competência',
-            data: quantidades
-        }]
-    }
-});
+// new Chart(ctx, {
+//     type: 'bar',
+//     data: {
+//         labels: nomes,
+//         datasets: [{
+//             label: 'Quantidade de Candidatos por Competência',
+//             data: quantidades
+//         }]
+//     }
+// });
+
+
+const botaoVoltar = document.getElementById('botao_voltar') as HTMLButtonElement;
+botaoVoltar.onclick = function(){
+    window.close();
+}

@@ -102,3 +102,11 @@ formulario.addEventListener('submit', function(evento){
    localStorage.setItem('empresas', JSON.stringify(listaEmpresas));
 
 });
+
+
+
+
+const botaoVoltar = document.getElementById('botao_voltar') as HTMLButtonElement;
+botaoVoltar.onclick = function(){
+    window.close();
+}

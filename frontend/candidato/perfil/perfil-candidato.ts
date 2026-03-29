@@ -3,6 +3,7 @@ import type { Vaga } from "../../empresa/cadastro/cadastro-empresa";
 
 
 
+
 const localStorageEmpresas = localStorage.getItem('empresas');
 let listaEmpresas: Empresa[] = [];
 if(localStorageEmpresas){
@@ -15,18 +16,25 @@ tabela.innerHTML = '';
 
 
 listaEmpresas.forEach((empresa) => {
-
+    
     empresa.vagas.forEach((vaga: Vaga) => {
-    const linha = `
+        const linha = `
         <tr>
-            <td>${empresa.pais}</td>
-            <td>${empresa.estado}</td>
-            <td>${empresa.descricao}</td>
-            <td>${vaga.titulo}</td>
-            <td>${vaga.descricao}</td>
-            <td>${vaga.competencias.join(' | ')}</td>
+        <td>${empresa.pais}</td>
+        <td>${empresa.estado}</td>
+        <td>${empresa.descricao}</td>
+        <td>${vaga.titulo}</td>
+        <td>${vaga.descricao}</td>
+        <td>${vaga.competencias.join(' | ')}</td>
         </tr>
-    `;
-    tabela.innerHTML += linha;
+        `;
+        tabela.innerHTML += linha;
     });
 });
+
+
+
+const botaoVoltar = document.getElementById('botao_voltar') as HTMLButtonElement;
+botaoVoltar.onclick = function(){
+    window.close();
+}

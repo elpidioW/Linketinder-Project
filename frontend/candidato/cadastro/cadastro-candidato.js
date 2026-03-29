@@ -35,5 +35,9 @@ formulario.addEventListener('submit', function (evento) {
     listaCandidatos.push(candidato);
     localStorage.setItem('candidatos', JSON.stringify(listaCandidatos));
 });
+const botaoVoltar = document.getElementById('botao_voltar');
+botaoVoltar.onclick = function () {
+    window.close();
+};
 export {};
 //# sourceMappingURL=cadastro-candidato.js.map

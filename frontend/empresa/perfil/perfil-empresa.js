@@ -23,16 +23,20 @@ listaCandidatos.forEach((candidato) => {
 });
 const nomes = Object.keys(qtdCompetencias);
 const quantidades = Object.values(qtdCompetencias);
-const ctx = document.getElementById('graficoCompetencias');
-new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: nomes,
-        datasets: [{
-                label: 'Quantidade de Candidatos por Competência',
-                data: quantidades
-            }]
-    }
-});
+// const ctx = document.getElementById('graficoCompetencias') as HTMLCanvasElement;
+// new Chart(ctx, {
+//     type: 'bar',
+//     data: {
+//         labels: nomes,
+//         datasets: [{
+//             label: 'Quantidade de Candidatos por Competência',
+//             data: quantidades
+//         }]
+//     }
+// });
+const botaoVoltar = document.getElementById('botao_voltar');
+botaoVoltar.onclick = function () {
+    window.close();
+};
 export {};
 //# sourceMappingURL=perfil-empresa.js.map

@@ -9,16 +9,20 @@ listaEmpresas.forEach((empresa) => {
     empresa.vagas.forEach((vaga) => {
         const linha = `
         <tr>
-            <td>${empresa.pais}</td>
-            <td>${empresa.estado}</td>
-            <td>${empresa.descricao}</td>
-            <td>${vaga.titulo}</td>
-            <td>${vaga.descricao}</td>
-            <td>${vaga.competencias.join(' | ')}</td>
+        <td>${empresa.pais}</td>
+        <td>${empresa.estado}</td>
+        <td>${empresa.descricao}</td>
+        <td>${vaga.titulo}</td>
+        <td>${vaga.descricao}</td>
+        <td>${vaga.competencias.join(' | ')}</td>
         </tr>
-    `;
+        `;
         tabela.innerHTML += linha;
     });
 });
+const botaoVoltar = document.getElementById('botao_voltar');
+botaoVoltar.onclick = function () {
+    window.close();
+};
 export {};
 //# sourceMappingURL=perfil-candidato.js.map

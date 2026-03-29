@@ -62,3 +62,12 @@ formulario.addEventListener('submit', function(evento){
    localStorage.setItem('candidatos', JSON.stringify(listaCandidatos));
 
 });
+
+
+
+
+
+const botaoVoltar = document.getElementById('botao_voltar') as HTMLButtonElement;
+botaoVoltar.onclick = function(){
+    window.close();
+}

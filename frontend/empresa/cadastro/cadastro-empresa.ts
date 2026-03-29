@@ -1,5 +1,4 @@
 
-
 export interface Empresa{
     id: number
     nome: string
@@ -8,6 +7,13 @@ export interface Empresa{
     pais: string
     estado: string
     cep: string
+    descricao: string
+    vagas: Vaga[]
+}
+
+export interface Vaga{
+    id: number
+    titulo: string
     descricao: string
     competencias: string[]
 }
@@ -22,7 +28,6 @@ if(localStorageEmpresas){
 
 const formulario = document.getElementById('formularioCadastroEmpresa') as HTMLFormElement;
 
-
 formulario.addEventListener('submit', function(evento){
     evento.preventDefault();
 
@@ -36,21 +41,52 @@ formulario.addEventListener('submit', function(evento){
     const descricao:string = (document.getElementById('descricao') as HTMLTextAreaElement).value;
     
 
-    
-    //Vai pegar todos os checbox com nome competecia e ver se estao marcados
+    const tituloVaga1:string = (document.getElementById('tituloVaga1') as HTMLInputElement).value;
+    const descricaoVaga1:string = (document.getElementById('descricaoVaga1') as HTMLTextAreaElement).value;
+    //Vai pegar todos os checbox com nome competeciaVaga1 e ver se estao marcados
     const checkMarcados = document.querySelectorAll<HTMLInputElement>(
-        'input[name="competencia"]:checked'
+        'input[name="competenciaVaga1"]:checked'
     );
-
-    const competencias: string[] = [];
+    const competenciasVaga1: string[] = [];
 
     //Vai pegar o valor de cada checkbox marcado e adicionar no array competencias
     checkMarcados.forEach((checkbox) => {
-        competencias.push(checkbox.value);
+        competenciasVaga1.push(checkbox.value);
     });
 
+    const vaga1: Vaga = {
+    id: Date.now() - 1,
+    titulo: tituloVaga1,
+    descricao: descricaoVaga1,
+    competencias: competenciasVaga1
+    };
+
+
+
+    const tituloVaga2:string = (document.getElementById('tituloVaga2') as HTMLInputElement).value;
+    const descricaoVaga2:string = (document.getElementById('descricaoVaga2') as HTMLTextAreaElement).value;
+    //Vai pegar todos os checbox com nome competeciaVaga2 e ver se estao marcados
+    const checkMarcados2 = document.querySelectorAll<HTMLInputElement>(
+        'input[name="competenciaVaga2"]:checked'
+    );
+    const competenciasVaga2: string[] = [];
+
+    //Vai pegar o valor de cada checkbox marcado e adicionar no array competencias
+    checkMarcados.forEach((checkbox) => {
+        competenciasVaga2.push(checkbox.value);
+    });
+    const vaga2: Vaga = {
+    id: Date.now(),
+    titulo: tituloVaga2,
+    descricao: descricaoVaga2,
+    competencias: competenciasVaga2
+    };
+
+
+
+
+
     const empresa: Empresa = {
- 
         id: Date.now(),
         nome: nome,
         email: email,
@@ -59,7 +95,7 @@ formulario.addEventListener('submit', function(evento){
         estado: estado,
         cep: cep,
         descricao: descricao,
-        competencias: competencias
+        vagas: [vaga1, vaga2]
     }
 
    listaEmpresas.push(empresa);

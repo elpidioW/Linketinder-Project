@@ -1,8 +1,8 @@
-import type { Empresa } from "../../empresa/cadastro/cadastro-empresa";
+import type { Candidato } from "../../candidato/cadastro/cadastro-candidato";
 declare var Chart: any; // Forma mais simples de evitar o erro de new Chart
 
 const localStorageCandidatos = localStorage.getItem('candidatos');
-let listaCandidatos: Empresa[] = [];
+let listaCandidatos: Candidato[] = [];
 if(localStorageCandidatos){
     listaCandidatos = JSON.parse(localStorageCandidatos);
 }

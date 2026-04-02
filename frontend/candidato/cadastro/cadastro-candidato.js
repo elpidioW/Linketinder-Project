@@ -1,3 +1,4 @@
+import { testeImportacao, validarNome, validarEmail, validarCPF, validarEstado, validarCEP } from '../../utils/validacoes.js';
 const localStorageCandidatos = localStorage.getItem('candidatos');
 let listaCandidatos = [];
 if (localStorageCandidatos) {
@@ -21,6 +22,30 @@ formulario.addEventListener('submit', function (evento) {
     checkMarcados.forEach((checkbox) => {
         competencias.push(checkbox.value);
     });
+    //Validações e a impressão dos erros
+    let erros = [];
+    if (!validarNome(nome)) {
+        erros.push('Nome inválido');
+    }
+    if (!validarEmail(email)) {
+        erros.push('Email inválido');
+    }
+    if (!validarCPF(cpf)) {
+        erros.push('CPF inválido');
+    }
+    if (idade < 18 || idade > 100) {
+        erros.push('Idade inválida');
+    }
+    if (!validarEstado(estado)) {
+        erros.push('Estado inválido');
+    }
+    if (!validarCEP(cep)) {
+        erros.push('CEP inválido');
+    }
+    if (erros.length > 0) {
+        alert(erros.join('\n'));
+        return;
+    }
     const candidato = {
         id: id,
         nome: nome,
@@ -34,10 +59,11 @@ formulario.addEventListener('submit', function (evento) {
     };
     listaCandidatos.push(candidato);
     localStorage.setItem('candidatos', JSON.stringify(listaCandidatos));
+    alert('Candidato cadastrado com sucesso!');
+    formulario.reset();
 });
 const botaoVoltar = document.getElementById('botao_voltar');
 botaoVoltar.onclick = function () {
     window.close();
 };
-export {};
 //# sourceMappingURL=cadastro-candidato.js.map

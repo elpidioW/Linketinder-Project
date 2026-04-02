@@ -1,3 +1,5 @@
+import {testeImportacao, validarNome, validarEmail, validarCPF, validarEstado, validarCEP} from '../../utils/validacoes.js';
+
 
 export interface Candidato{
     id: number
@@ -46,6 +48,34 @@ formulario.addEventListener('submit', function(evento){
         competencias.push(checkbox.value);
     });
 
+
+    //Validações e a impressão dos erros
+    let erros: string[] = [];
+    if(!validarNome(nome)){
+        erros.push('Nome inválido');
+    }
+    if(!validarEmail(email)){
+        erros.push('Email inválido');
+    }
+    if(!validarCPF(cpf)){
+        erros.push('CPF inválido');
+    }
+    if(idade < 18 || idade > 100){
+        erros.push('Idade inválida');
+    }
+    if(!validarEstado(estado)){
+        erros.push('Estado inválido');
+    }
+    if(!validarCEP(cep)){
+        erros.push('CEP inválido');
+    }
+    if(erros.length > 0){
+        alert(erros.join('\n'));
+        return;
+    }
+
+
+
     const candidato: Candidato = {
         id: id,
         nome: nome,
@@ -61,9 +91,10 @@ formulario.addEventListener('submit', function(evento){
    listaCandidatos.push(candidato);
    localStorage.setItem('candidatos', JSON.stringify(listaCandidatos));
 
+    alert('Candidato cadastrado com sucesso!');
+    formulario.reset();
+
 });
-
-
 
 
 

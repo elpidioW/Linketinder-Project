@@ -23,8 +23,8 @@ listaCandidatos.forEach((candidato) => {
 });
 const nomes = Object.keys(qtdCompetencias);
 const quantidades = Object.values(qtdCompetencias);
-const ctx = document.getElementById('graficoCompetencias');
-new Chart(ctx, {
+const canvas = document.getElementById('graficoCompetencias');
+new Chart(canvas, {
     type: 'bar',
     data: {
         labels: nomes,
@@ -32,7 +32,7 @@ new Chart(ctx, {
                 label: 'Quantidade de Candidatos por Competência',
                 data: quantidades
             }]
-    }
+    },
 });
 const botaoVoltar = document.getElementById('botao_voltar');
 botaoVoltar.onclick = function () {

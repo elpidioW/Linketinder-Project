@@ -52,7 +52,7 @@
             <br><br>
 
             <label for="descricaoVaga1">Descrição da vaga:</label>
-            <textarea id="descricaoVaga1" rows="2"></textarea>
+            <textarea id="descricaoVaga1" rows="2" required></textarea>
             <br><br>
 
             <label>Competências da vaga 1:</label><br>
@@ -67,7 +67,7 @@
             <h3>Vaga 2</h3>
 
             <label for="tituloVaga2">Título da vaga:</label>
-            <input type="text" id="tituloVaga2" required>
+            <input type="text" id="tituloVaga2">
             <br><br>
 
             <label for="descricaoVaga2">Descrição da vaga:</label>
@@ -82,14 +82,16 @@
             <input type="checkbox" name="competenciaVaga2" value="php"> PHP
 
             <br><br>
-
+   
+            
+            <div class="botoes">
+                <button type="submit">Salvar</button>
+                <button type="button" id="botao_voltar">Voltar</button>
+            </div>
+            
         </form>
     </div>
 
-    <div class="botoes">
-        <button type="submit">Salvar</button>
-        <button type="button" id="botao_voltar">Voltar</button>
-    </div>
 
 
     <script type="module" src="cadastro-empresa.js"></script>

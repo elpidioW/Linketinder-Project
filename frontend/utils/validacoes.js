@@ -3,12 +3,12 @@ export function testeImportacao() {
 }
 //Candidato e Empresa
 export function validarNome(nome) {
-    const regex = /^[a-zA-Z\s]+$/;
+    const regex = /^[a-zA-ZÀ-ü\s'-]+$/;
     return regex.test(nome);
 }
 //Candidato e Empresa
 export function validarEstado(estado) {
-    const regex = /^[a-zA-Z\s]+$/;
+    const regex = /^[a-zA-ZÀ-ü\s'-]+$/;
     return regex.test(estado);
 }
 //Candidato e Empresa
@@ -33,7 +33,7 @@ export function validarCNPJ(cnpj) {
 }
 //Empresa
 export function validarPais(pais) {
-    const regex = /^[a-zA-Z\s]+$/;
+    const regex = /^[a-zA-ZÀ-ü\s'-]+$/;
     return regex.test(pais);
 }
 //# sourceMappingURL=validacoes.js.map

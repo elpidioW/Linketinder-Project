@@ -2,17 +2,15 @@ export function testeImportacao(){
     console.log('Teste de importação de funções de validação');
 }
 
-
-
 //Candidato e Empresa
 export function validarNome(nome: string): boolean{
-    const regex = /^[a-zA-Z\s]+$/;
+    const regex = /^[a-zA-ZÀ-ü\s'-]+$/;
     return regex.test(nome);
 }
 
 //Candidato e Empresa
 export function validarEstado(estado: string): boolean{
-    const regex = /^[a-zA-Z\s]+$/;
+    const regex = /^[a-zA-ZÀ-ü\s'-]+$/;
     return regex.test(estado);
 }
 
@@ -42,6 +40,6 @@ export function validarCNPJ(cnpj: string): boolean{
 
 //Empresa
 export function validarPais(pais: string): boolean{
-    const regex = /^[a-zA-Z\s]+$/;
+    const regex = /^[a-zA-ZÀ-ü\s'-]+$/;
     return regex.test(pais);
 }

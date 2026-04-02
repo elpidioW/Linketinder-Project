@@ -146,5 +146,5 @@ formulario.addEventListener('submit', function(evento){
 
 const botaoVoltar = document.getElementById('botao_voltar') as HTMLButtonElement;
 botaoVoltar.onclick = function(){
-    window.close();
+    window.history.back();
 }

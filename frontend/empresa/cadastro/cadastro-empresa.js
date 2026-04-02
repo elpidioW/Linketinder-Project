@@ -96,6 +96,6 @@ formulario.addEventListener('submit', function (evento) {
 });
 const botaoVoltar = document.getElementById('botao_voltar');
 botaoVoltar.onclick = function () {
-    window.close();
+    window.history.back();
 };
 //# sourceMappingURL=cadastro-empresa.js.map

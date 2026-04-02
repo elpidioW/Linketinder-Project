@@ -36,7 +36,8 @@ new Chart(canvas, {
 });
 const botaoVoltar = document.getElementById('botao_voltar');
 botaoVoltar.onclick = function () {
-    window.close();
+    window.history.back();
+    ;
 };
 export {};
 //# sourceMappingURL=perfil-empresa.js.map

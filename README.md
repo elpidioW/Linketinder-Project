@@ -5,7 +5,7 @@ Sistema de recrutamento inspirado em plataformas como LinkedIn e Tinder, de modo
 Atualmente a aplicação permite o cadastro e listagem de candidatos e empresas no backend e no frontend.
 Front e back ainda não se comunicam.
 No frontend há persistência de dados utilizando LocalStorage.
-
+Em bd, temos o modelo entidade-relacionamento do projeto, feito com auxilio do LucidChart, temos o modelo lógico feito com auxilio do dbdiagram.io sendo ele usado também para gerar o código que dará origem ao modelo físico, também presente na pasta bd
 
 
 ### Feito por: Wallace Elpidio Pereira cardoso <br><br>

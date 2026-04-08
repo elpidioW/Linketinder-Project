@@ -29,11 +29,16 @@ repositories {
 
 
 dependencies {
-    implementation 'org.apache.groovy:groovy:5.0.0'
+    implementation 'org.apache.groovy:groovy:4.0.21'
+    implementation 'org.apache.groovy:groovy-sql:4.0.21'
+
+    implementation 'org.postgresql:postgresql:42.7.10'
+
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testImplementation 'org.junit.vintage:junit-vintage-engine' // suporte ao JUnit 4
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
 }
 
 test {
@@ -42,4 +47,10 @@ test {
 
 run {
     standardInput = System.in
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
 }

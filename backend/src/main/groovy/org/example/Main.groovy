@@ -3,6 +3,26 @@ package org.example
 import org.example.service.CadastroService
 
 
+
+import org.example.dao.Conexao
+
+class Main {
+    static void main(String[] args) {
+
+        def sql = Conexao.getConnection()
+
+        println "✅ Conectado!"
+
+        sql.eachRow('SELECT * FROM candidato') { row ->
+            println row.nome
+        }
+
+        sql.close()
+    }
+}
+
+/*
+
 class Main {
 
     static void main(String[] args) {
@@ -108,3 +128,4 @@ class Main {
         }
     }
 }
+*/

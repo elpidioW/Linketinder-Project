@@ -11,8 +11,8 @@ class Candidato extends Pessoa{
     List<String> competencias
 
     Candidato(Integer id, Integer idEndereco, String nome, String sobrenome, String email, String cpf, LocalDate dataNascimento,
-              String cep, String cidade, String estado, String pais, String descricao, String senha, List<String> competencias){
-        super(id, idEndereco, nome, email, cep, cidade, estado, pais, descricao, senha)
+              String descricao, String senha, List<String> competencias){
+        super(id, idEndereco, nome, email, descricao, senha)
         this.sobrenome = sobrenome
         this.cpf = cpf
         this.dataNascimento = dataNascimento
@@ -31,9 +31,9 @@ class Candidato extends Pessoa{
         println("Idade: ${getIdade()} anos")
         println("CPF: $cpf")
         println("Email: $email")
-        println("Cidade: $cidade - $estado")
+        /*println("Cidade: $cidade - $estado")
         println("Pais: $pais")
-        println("CEP: $cep")
+        println("CEP: $cep")*/
         println("Descrição: $descricao")
         println("Competências: $competencias")
     }

@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="307d71fd-ee18-4f92-b51d-3fadb3b62aac" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/groovy/org/example/Main.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/groovy/org/example/Main.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/groovy/org/example/dao/Conexao.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/groovy/org/example/dao/Database.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/groovy/org/example/model/InterfacePessa.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/groovy/org/example/model/InterfacePessa.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/groovy/org/example/model/Pessoa.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/groovy/org/example/model/Pessoa.groovy" afterDir="false" />
-    </list>
+    <list default="true" id="307d71fd-ee18-4f92-b51d-3fadb3b62aac" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

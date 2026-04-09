@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="307d71fd-ee18-4f92-b51d-3fadb3b62aac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/groovy/org/example/model/Vaga.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/groovy/org/example/model/OrigemInteracao.groovy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/groovy/org/example/model/TipoInteracao.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +38,9 @@
   "associatedIndex": 8
 }]]></component>
   <component name="ProjectId" id="3C8Kms3yy2raTeGaBb20G7Pn1WE" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />

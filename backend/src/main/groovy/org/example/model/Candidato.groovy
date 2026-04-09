@@ -1,31 +1,40 @@
 package org.example.model
 
+import java.time.LocalDate
+import java.time.Period
+
 class Candidato extends Pessoa{
 
+    String sobrenome
     String cpf
-    int idade
+    LocalDate dataNascimento
+    List<String> competencias
 
-    Candidato(int id, String nome, String email, String estado, String pais, String cep, String descricao, ArrayList<String> competencias, String cpf, int idade){
-
-        super(id, nome, email, estado, pais, cep, descricao, competencias)
+    Candidato(Integer id, Integer idEndereco, String nome, String sobrenome, String email, String cpf, LocalDate dataNascimento,
+              String cep, String cidade, String estado, String pais, String descricao, String senha, List<String> competencias){
+        super(id, idEndereco, nome, email, cep, cidade, estado, pais, descricao, senha)
+        this.sobrenome = sobrenome
         this.cpf = cpf
-        this.idade = idade
+        this.dataNascimento = dataNascimento
+        this.competencias = competencias
+    }
+
+    int getIdade(){
+        return Period.between(dataNascimento, LocalDate.now()).years
     }
 
 
     @Override
     public void exibirPerfil(){
         println("ID: $id")
-        println("Nome: $nome")
-        println("Idade: $idade")
+        println("Nome: $nome $sobrenome")
+        println("Idade: ${getIdade()} anos")
         println("CPF: $cpf")
         println("Email: $email")
-        println("Estado: $estado")
+        println("Cidade: $cidade - $estado")
         println("Pais: $pais")
         println("CEP: $cep")
         println("Descrição: $descricao")
         println("Competências: $competencias")
     }
-
-
 }

@@ -5,8 +5,9 @@ class Empresa extends Pessoa{
 
     String cnpj
 
-    Empresa(int id, String nome, String email, String estado, String pais, String cep, String descricao, ArrayList<String> competencias, String cnpj){
-        super(id, nome, email, estado, pais, cep, descricao, competencias)
+    Empresa(Integer id, Integer idEndereco, String nome, String email, String cep, String cidade, String estado,
+            String pais, String descricao, String senha, String cnpj){
+        super(id, idEndereco, nome, email, cep, cidade, estado, pais, descricao, senha)
         this.cnpj = cnpj
     }
 
@@ -17,11 +18,10 @@ class Empresa extends Pessoa{
         println("Nome: $nome")
         println("CNPJ: $cnpj")
         println("Email: $email")
-        println("Estado: $estado")
+        println("Cidade: $cidade - $estado")
         println("Pais: $pais")
         println("CEP: $cep")
         println("Descrição: $descricao")
-        println("Competências: $competencias")
     }
 
 

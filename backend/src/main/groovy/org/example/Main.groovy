@@ -1,15 +1,13 @@
 package org.example
 
+
+import org.example.dao.Database
 import org.example.service.CadastroService
 
-
-
-import org.example.dao.Conexao
-
-class Main {
+/*class Main {
     static void main(String[] args) {
 
-        def sql = Conexao.getConnection()
+        def sql = Database.getConnection()
 
         println "✅ Conectado!"
 
@@ -19,9 +17,8 @@ class Main {
 
         sql.close()
     }
-}
+}*/
 
-/*
 
 class Main {
 
@@ -128,4 +125,3 @@ class Main {
         }
     }
 }
-*/

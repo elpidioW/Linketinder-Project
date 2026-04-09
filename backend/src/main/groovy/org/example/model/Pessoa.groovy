@@ -1,24 +1,30 @@
 package org.example.model
 
 abstract class Pessoa implements InterfacePessoa{
-    int id
+    Integer id
+    Integer idEndereco
     String nome
     String email
+    String cep
+    String cidade
     String estado
     String pais
-    String cep
     String descricao
-    List<String> competencias
+    String senha
 
-    Pessoa(int id, String nome, String email, String estado, String pais, String cep, String descricao, List<String> competencias){
+
+    Pessoa(Integer id, Integer idEndereco, String nome, String email, String cep, String cidade, String estado, String pais,
+           String descricao, String senha){
         this.id = id
+        this.idEndereco = idEndereco
         this.nome = nome
         this.email = email
+        this.cep = cep
+        this.cidade = cidade
         this.estado = estado
         this.pais = pais
-        this.cep = cep
         this.descricao = descricao
-        this.competencias = competencias
+        this.senha = senha
     }
 
     abstract void exibirPerfil()

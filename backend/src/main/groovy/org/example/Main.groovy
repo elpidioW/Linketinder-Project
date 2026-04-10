@@ -1,24 +1,67 @@
 package org.example
 
-
+import groovy.sql.Sql
 import org.example.dao.Database
+
+
+import org.example.model.Endereco
+import org.example.dao.EnderecoDAO
+
+
 import org.example.service.CadastroService
 
-/*class Main {
+class Main {
+
     static void main(String[] args) {
 
-        def sql = Database.getConnection()
+        Sql sql = Database.getConnection()
+        def enderecoDAO = new EnderecoDAO(sql)
+
+
+
+
+        //enderecoDAO.delete(7)
+       /* // Busca o endereço atual para confirmar antes do update
+        def endereco = enderecoDAO.select(1)
+        println("Antes: $endereco")
+
+        //Atualiza os dados
+        endereco.cep    = '74001000'
+        endereco.cidade = 'Aparecida de Goiânia'
+
+        boolean atualizado = enderecoDAO.update(endereco)
+
+        if (atualizado) {
+            def enderecoAtualizado = enderecoDAO.select(1)
+            println("Depois: $enderecoAtualizado")
+        } else {
+            println("Endereço não encontrado.")
+        }*/
+
+        /*def endereco = new Endereco(
+                "69007826",
+                "Manaus",
+                "AM",
+                "Brasil"
+        )
+        //endereco1.exibirEndereco()
+        //Integer idEndereco = enderecoDAO.insert(endereco);
+        //println(idEndereco)
+        println(enderecoDAO.retornarEnderecoPeloID(1))
+
+*/
+//        sql.eachRow("SELECT  * FROM endereco"){ row ->
+//
+//            println ("${row.id} - ${row.cidade}")
+//        }
 
         println "✅ Conectado!"
 
-        sql.eachRow('SELECT * FROM candidato') { row ->
-            println row.nome
-        }
-
         sql.close()
     }
-}*/
+}
 
+/*
 
 class Main {
 
@@ -125,3 +168,4 @@ class Main {
         }
     }
 }
+*/

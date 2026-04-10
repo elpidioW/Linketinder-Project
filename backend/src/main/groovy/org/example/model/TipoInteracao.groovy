@@ -6,7 +6,11 @@ enum TipoInteracao {
 
     final String tipo
 
-    TipoInteracao(String interacao){
-        this.interacao = interacao
+    TipoInteracao(String tipo){
+        this.tipo = tipo
+    }
+
+    static TipoInteracao converteParaEnum(String tipo){
+        return values().find {it.tipo == tipo}
     }
 }

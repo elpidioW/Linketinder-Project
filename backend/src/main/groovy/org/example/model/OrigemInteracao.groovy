@@ -9,4 +9,8 @@ enum OrigemInteracao {
     OrigemInteracao(String origem) {
         this.origem = origem
     }
+
+    static TipoInteracao converteParaEnum(String origem){
+        return values().find {it.origem == origem}
+    }
 }

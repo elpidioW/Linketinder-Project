@@ -1,9 +1,9 @@
 package org.example
 
 import groovy.sql.Sql
+import org.example.dao.CompetenciaDAO
 import org.example.dao.Database
-
-
+import org.example.model.Competencia
 import org.example.model.Endereco
 import org.example.dao.EnderecoDAO
 
@@ -16,44 +16,8 @@ class Main {
 
         Sql sql = Database.getConnection()
         def enderecoDAO = new EnderecoDAO(sql)
+        def competenciaDAO = new CompetenciaDAO(sql)
 
-
-
-
-        //enderecoDAO.delete(7)
-       /* // Busca o endereço atual para confirmar antes do update
-        def endereco = enderecoDAO.select(1)
-        println("Antes: $endereco")
-
-        //Atualiza os dados
-        endereco.cep    = '74001000'
-        endereco.cidade = 'Aparecida de Goiânia'
-
-        boolean atualizado = enderecoDAO.update(endereco)
-
-        if (atualizado) {
-            def enderecoAtualizado = enderecoDAO.select(1)
-            println("Depois: $enderecoAtualizado")
-        } else {
-            println("Endereço não encontrado.")
-        }*/
-
-        /*def endereco = new Endereco(
-                "69007826",
-                "Manaus",
-                "AM",
-                "Brasil"
-        )
-        //endereco1.exibirEndereco()
-        //Integer idEndereco = enderecoDAO.insert(endereco);
-        //println(idEndereco)
-        println(enderecoDAO.retornarEnderecoPeloID(1))
-
-*/
-//        sql.eachRow("SELECT  * FROM endereco"){ row ->
-//
-//            println ("${row.id} - ${row.cidade}")
-//        }
 
         println "✅ Conectado!"
 
@@ -169,3 +133,101 @@ class Main {
     }
 }
 */
+
+
+
+
+
+/*
+
+
+
+TESTES ENDEREÇO
+enderecoDAO.delete(7)
+
+
+ Busca o endereço atual para confirmar antes do update
+ def endereco = enderecoDAO.select(1)
+ println("Antes: $endereco")
+
+ //Atualiza os dados
+ endereco.cep    = '74001000'
+ endereco.cidade = 'Aparecida de Goiânia'
+
+ boolean atualizado = enderecoDAO.update(endereco)
+
+ if (atualizado) {
+     def enderecoAtualizado = enderecoDAO.select(1)
+     println("Depois: $enderecoAtualizado")
+ } else {
+     println("Endereço não encontrado.")
+ }
+
+def endereco = new Endereco(
+        "69007826",
+        "Manaus",
+        "AM",
+        "Brasil"
+)
+//endereco1.exibirEndereco()
+//Integer idEndereco = enderecoDAO.insert(endereco);
+//println(idEndereco)
+println(enderecoDAO.retornarEnderecoPeloID(1))
+
+
+sql.eachRow("SELECT  * FROM endereco"){ row ->
+
+    println ("${row.id} - ${row.cidade}")
+}
+*/
+
+
+
+
+
+
+/*
+TESTE COMPETENCIAS
+
+        def comp = new Competencia("java")
+        def id = competenciaDAO.insert(comp)
+        println(id)
+
+        def id1 = competenciaDAO.insert(new Competencia(null, "Groovy"))
+        def id2 = competenciaDAO.insert(new Competencia(null, "Groovy"))
+
+        println "ID1: $id1"
+        println "ID2: $id2"
+
+        def comp = new Competencia(null, "SQL")
+        def id = competenciaDAO.insert(comp)
+
+        def resultado = competenciaDAO.select(id)
+
+        println resultado?.nome
+
+
+
+        competenciaDAO.insert(new Competencia(null, "Python"))
+        def RES = competenciaDAO.buscarPorNome("Python")
+        println RES?.id
+        println RES?.nome
+
+
+        def id = competenciaDAO.insert(new Competencia("c"))
+
+        def compAtualizado = new Competencia(id, "C")
+
+        def linhas = competenciaDAO.update(compAtualizado)
+
+        println "Linhas afetadas: $linhas"
+
+        def novo = competenciaDAO.select(id)
+        println novo.nome
+
+        def linhas = competenciaDAO.delete(10)
+
+        println "Linhas deletadas: $linhas"
+
+        def resultado = competenciaDAO.select(10)
+        println resultado  // deve ser null*/

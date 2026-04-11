@@ -10,6 +10,7 @@ class Candidato extends Pessoa{
     LocalDate dataNascimento
     List<String> competencias
 
+
     Candidato(Integer id, Integer idEndereco, String nome, String sobrenome, String email, String cpf, LocalDate dataNascimento,
               String descricao, String senha, List<String> competencias){
         super(id, idEndereco, nome, email, descricao, senha)

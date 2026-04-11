@@ -1,14 +1,18 @@
 package org.example
 
 import groovy.sql.Sql
+import org.example.dao.CandidatoDAO
 import org.example.dao.CompetenciaDAO
 import org.example.dao.Database
+import org.example.model.Candidato
 import org.example.model.Competencia
 import org.example.model.Endereco
 import org.example.dao.EnderecoDAO
 
 
 import org.example.service.CadastroService
+
+import java.time.LocalDate
 
 class Main {
 
@@ -17,6 +21,10 @@ class Main {
         Sql sql = Database.getConnection()
         def enderecoDAO = new EnderecoDAO(sql)
         def competenciaDAO = new CompetenciaDAO(sql)
+        def candidatoDAO = new CandidatoDAO(sql)
+
+
+
 
 
         println "✅ Conectado!"
@@ -230,4 +238,59 @@ TESTE COMPETENCIAS
         println "Linhas deletadas: $linhas"
 
         def resultado = competenciaDAO.select(10)
-        println resultado  // deve ser null*/
+        println resultado  // deve ser null
+ */
+
+
+
+/*
+
+TESTE CANDIDATO
+       def endereco = new Endereco("69005070", "Manaus", "AM", "Brasil")
+
+       def candidato = new Candidato(
+               null,
+               null,
+               "rafa",
+               "não silva",
+               "sr@email.com",
+               "23154768009",
+               LocalDate.of(2000, 1, 1),
+               "Dev backend",
+               "123456",
+               ["c#", "c++", "Java"] // competências
+       )
+
+       def id = candidatoDAO.insert(candidato, endereco)
+
+       println "ID candidato: $id"
+
+       def candidato = candidatoDAO.select(1)
+
+       def endereco = new Endereco(
+               candidato.idEndereco,
+               "70000000",
+               "Brasília",
+               "DF",
+               "Brasil"
+       )
+
+       candidato.competencias = ["C#", "C"]
+       candidato.nome = "João Atualizado"
+       candidato.email = "novo@email.com"
+
+       candidatoDAO.update(candidato, endereco)
+
+       def atualizado = candidatoDAO.select(1)
+       println atualizado.nome
+       println atualizado.email
+
+
+
+       def resultado = candidatoDAO.delete(13)
+
+       println "Linhas deletadas: $resultado"
+
+       def candidato = candidatoDAO.select(13)
+       println candidato  // deve ser null
+*/

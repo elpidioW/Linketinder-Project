@@ -46,7 +46,7 @@ CREATE TABLE vaga (
         FOREIGN KEY (id_endereco) REFERENCES endereco(id),
 
     CONSTRAINT fk_vaga_empresa
-        FOREIGN KEY (id_empresa) REFERENCES empresa(id)
+        FOREIGN KEY (id_empresa) REFERENCES empresa(id) ON DELETE CASCADE
 );
 
 CREATE TABLE competencia (
@@ -88,10 +88,10 @@ CREATE TABLE interacao (
     tipo CHAR(1) NOT NULL,
 
     CONSTRAINT fk_interacao_candidato
-        FOREIGN KEY (id_candidato) REFERENCES candidato(id),
+        FOREIGN KEY (id_candidato) REFERENCES candidato(id) ON DELETE CASCADE,
 
     CONSTRAINT fk_interacao_vaga
-        FOREIGN KEY (id_vaga) REFERENCES vaga(id),
+        FOREIGN KEY (id_vaga) REFERENCES vaga(id) ON DELETE CASCADE,
 
     CONSTRAINT chk_origem
         CHECK (origem IN ('C', 'E')),

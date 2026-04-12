@@ -4,12 +4,15 @@ import groovy.sql.Sql
 import org.example.dao.CandidatoDAO
 import org.example.dao.CompetenciaDAO
 import org.example.dao.Database
-import org.example.model.Candidato
-import org.example.model.Competencia
-import org.example.model.Endereco
+import org.example.dao.EmpresaDAO
+import org.example.dao.VagaDAO
 import org.example.dao.EnderecoDAO
 
-
+import org.example.model.Candidato
+import org.example.model.Competencia
+import org.example.model.Empresa
+import org.example.model.Endereco
+import org.example.model.Vaga
 import org.example.service.CadastroService
 
 import java.time.LocalDate
@@ -22,6 +25,8 @@ class Main {
         def enderecoDAO = new EnderecoDAO(sql)
         def competenciaDAO = new CompetenciaDAO(sql)
         def candidatoDAO = new CandidatoDAO(sql)
+        def empresaDAO = new EmpresaDAO(sql)
+        def vagaDAO = new VagaDAO(sql)
 
 
 
@@ -32,6 +37,7 @@ class Main {
         sql.close()
     }
 }
+
 
 /*
 
@@ -294,3 +300,124 @@ TESTE CANDIDATO
        def candidato = candidatoDAO.select(13)
        println candidato  // deve ser null
 */
+
+/*
+        EMPRESAS
+
+        def endereco = new Endereco("70000000", "Brasília", "DF", "Brasil")
+
+        def empresa = new Empresa(
+                null,
+                null,
+                "Tech Corp",
+                "tech1@email.com",
+                "Empresa de tecnologia",
+                "123456",
+                "12345678000961"
+        )
+
+        def id = empresaDAO.insert(empresa, endereco)
+
+        println "ID empresa: $id"
+
+        def empresa = empresaDAO.select(1)
+
+        println empresa?.nome
+        println empresa?.cnpj
+
+        def empresa = empresaDAO.select(1)
+
+        def endereco = new Endereco(
+                empresa.idEndereco,
+                "80000000",
+                "Curitiba",
+                "PR",
+                "Brasil"
+        )
+
+        empresa.nome = "Tech Corp Atualizada"
+        empresa.email = "novo@email.com"
+
+        def linhas = empresaDAO.update(empresa, endereco)
+
+        println "Linhas afetadas: $linhas"
+
+        def atualizado = empresaDAO.select(1)
+        println atualizado.nome
+        println atualizado.email
+
+        def linhas = empresaDAO.delete(1)
+
+        println "Linhas deletadas: $linhas"
+
+        def empresa = empresaDAO.select(1)
+        println empresa  // deve ser null
+
+   */
+
+
+ /*
+        VAGA
+
+        def vaga = new Vaga(
+                null,
+                null,
+                8,
+                "Dev Backend",
+                "Trabalhar com APIs",
+                true,
+                ["Java", "SQL"]
+        )
+
+        def endereco = new Endereco(
+                "70000000",
+                "Brasília",
+                "DF",
+                "Brasil"
+        )
+
+        def idVaga = vagaDAO.insert(vaga, endereco)
+        println "ID vaga: $idVaga"
+
+
+        def vaga = vagaDAO.select(10)
+
+        println vaga?.nome
+        println vaga?.competencias
+
+        def vagas = vagaDAO.listarVagasAtivasPorEmpresa(3)
+
+        vagas.each {
+            println "${it.id} - ${it.nome}"
+        }
+
+
+
+        def vaga = vagaDAO.select(4)
+
+        def endereco = new Endereco(
+                vaga.idEndereco,
+                "80000000",
+                "Curitiba",
+                "PR",
+                "Brasil"
+        )
+
+        vaga.nome = "Dev Backend Senior"
+        vaga.ativa = false
+        vaga.competencias = ["Java"] // remove SQL
+
+        vagaDAO.update(vaga, endereco)
+
+        def atualizada = vagaDAO.select(4)
+
+        println atualizada.nome
+        println atualizada.ativa
+        println atualizada.competencias
+
+
+        def linhas = vagaDAO.delete(5)
+
+        println "Linhas deletadas: $linhas"
+
+        println vagaDAO.select(5) // null*/

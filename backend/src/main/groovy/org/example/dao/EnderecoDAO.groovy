@@ -32,6 +32,14 @@ class EnderecoDAO {
         return new Endereco(row.id, row.cep, row.cidade, row.estado, row.pais)
     }
 
+    List<Endereco> listarTodos(){
+        def enderecos = []
+        sql.eachRow('SELECT * FROM endereco') { row ->
+            enderecos << new Endereco(row.id, row.cep, row.cidade, row.estado, row.pais)
+        }
+        return enderecos
+    }
+
     Integer update(Endereco endereco){
         def query = '''
             UPDATE endereco 

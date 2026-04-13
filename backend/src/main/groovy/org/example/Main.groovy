@@ -28,10 +28,6 @@ class Main {
         def empresaDAO = new EmpresaDAO(sql)
         def vagaDAO = new VagaDAO(sql)
 
-
-
-
-
         println "✅ Conectado!"
 
         sql.close()

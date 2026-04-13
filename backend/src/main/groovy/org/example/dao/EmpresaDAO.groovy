@@ -45,6 +45,16 @@ class EmpresaDAO {
         return new Empresa(row.id, row.id_endereco, row.nome, row.email, row.descricao, row.senha, row.cnpj)
     }
 
+    List<Empresa> listarTodas() {
+        def empresas = []
+        sql.eachRow('SELECT * FROM empresa') { row ->
+            empresas << new Empresa(row.id, row.id_endereco, row.nome, row.email, row.descricao, row.senha, row.cnpj)
+        }
+        return empresas
+    }
+
+
+
     Integer update(Empresa empresa, Endereco endereco) {
         enderecoDAO.update(endereco)
 

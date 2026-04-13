@@ -19,10 +19,9 @@ class VagaDAO {
     Integer insert(Vaga vaga, Endereco endereco){
         Integer idEndereco = enderecoDAO.insert(endereco)
 
-
         def query = '''
             INSERT INTO vaga (nome, descricao, ativa, id_endereco, id_empresa)
-            VALUES (:nome, :descricao, :ativa, :idEndereco, :idEmpresa)            
+            VALUES (:nome, :descricao, :ativa, :idEndereco, :idEmpresa)
             '''
 
         def keys = sql.executeInsert(query, [
@@ -60,6 +59,14 @@ class VagaDAO {
         '''
 
         sql.eachRow(query, [idEmpresa: idEmpresa]){ row ->
+            vagas << new Vaga(row.id, row.id_endereco, row.id_empresa, row.nome, row.descricao, row.ativa, buscarCompetencias(row.id))
+        }
+        return vagas
+    }
+
+    List<Vaga> listarTodas() {
+        def vagas = []
+        sql.eachRow('SELECT * FROM vagas'){ row ->
             vagas << new Vaga(row.id, row.id_endereco, row.id_empresa, row.nome, row.descricao, row.ativa, buscarCompetencias(row.id))
         }
         return vagas

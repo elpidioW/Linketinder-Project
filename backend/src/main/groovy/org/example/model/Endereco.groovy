@@ -15,13 +15,6 @@ class Endereco{
         this.pais = pais
     }
 
-    Endereco(String cep, String cidade, String estado, String pais) {
-        this.cep = cep
-        this.cidade = cidade
-        this.estado = estado
-        this.pais = pais
-    }
-
     public void exibirEndereco() {
         println("ID: $id")
         println("CEP: $cep")

@@ -38,6 +38,14 @@ class CompetenciaDAO {
         return new Competencia(row.id, row.nome)
     }
 
+    List<Competencia> listarTodas(){
+        def competencias = []
+        sql.eachRow('SELECT * FROM competencia ORDER BY nome') { row ->
+            competencias << new Competencia(row.id, row.nome)
+        }
+        return competencias
+    }
+
     Competencia buscarPorNome(String nome) {
         def row = sql.firstRow('SELECT * FROM competencia WHERE nome = :nome', [nome: nome])
 

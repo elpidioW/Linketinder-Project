@@ -55,6 +55,16 @@ class CandidatoDAO{
                 row.data_nascimento.toLocalDate(), row.descricao, row.senha, buscarCompetencias(row.id))
     }
 
+    List<Candidato> listarTodos() {
+        def candidatos = []
+        sql.eachRow('SELECT * FROM candidato') { row ->
+            candidatos << new Candidato(row.id, row.id_endereco, row.nome, row.sobrenome, row.email,
+                    row.cpf, row.data_nascimento.toLocalDate(), row.descricao, row.senha, buscarCompetencias(row.id)
+            )
+        }
+        return candidatos
+    }
+
 
     void update(Candidato candidato, Endereco endereco) {
         enderecoDAO.update(endereco)

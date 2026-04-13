@@ -8,15 +8,6 @@ import org.example.dao.EmpresaDAO
 import org.example.dao.VagaDAO
 import org.example.dao.EnderecoDAO
 
-import org.example.model.Candidato
-import org.example.model.Competencia
-import org.example.model.Empresa
-import org.example.model.Endereco
-import org.example.model.Vaga
-import org.example.service.CadastroService
-
-import java.time.LocalDate
-
 class Main {
 
     static void main(String[] args) {

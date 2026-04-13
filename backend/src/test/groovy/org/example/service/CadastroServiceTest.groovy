@@ -1,7 +1,6 @@
 package test
 
-import org.example.service.CadastroService
-import org.junit.Ignore
+
 import org.junit.jupiter.api.Test
 
 import static org.junit.Assert.*

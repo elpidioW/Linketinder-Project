@@ -66,7 +66,7 @@ class VagaDAO {
 
     List<Vaga> listarTodas() {
         def vagas = []
-        sql.eachRow('SELECT * FROM vagas'){ row ->
+        sql.eachRow('SELECT * FROM vaga'){ row ->
             vagas << new Vaga(row.id, row.id_endereco, row.id_empresa, row.nome, row.descricao, row.ativa, buscarCompetencias(row.id))
         }
         return vagas
@@ -77,9 +77,9 @@ class VagaDAO {
 
         def query = '''
             UPDATE vaga
-            SET nome      = :nome,
+            SET nome = :nome,
                 descricao = :descricao,
-                ativa     = :ativa
+                ativa = :ativa
             WHERE id = :id
         '''
 

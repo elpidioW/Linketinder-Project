@@ -7,11 +7,6 @@
     <list default="true" id="307d71fd-ee18-4f92-b51d-3fadb3b62aac" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/groovy/org/example/Main.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/groovy/org/example/Main.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/groovy/org/example/dao/VagaDAO.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/groovy/org/example/dao/VagaDAO.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/groovy/org/example/service/CandidatoService.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/groovy/org/example/service/CandidatoService.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/groovy/org/example/service/EmpresaService.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/groovy/org/example/service/EmpresaService.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/groovy/org/example/service/VagaService.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/groovy/org/example/service/VagaService.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/groovy/org/example/service/CadastroServiceTest.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/groovy/org/example/service/CadastroServiceTest.groovy" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,6 +103,17 @@
       <updated>1775761918448</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
